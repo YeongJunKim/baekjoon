@@ -10,19 +10,35 @@
  */
 
 #include <iostream>
-#include <list>
+#include <vector>
 
-std::list<int> li;
+int n, number;
+
 int main(int argc, char *argv[])
 {
-    int n, number;
     std::cin >> n;
+    std::vector<int> li(n);
+
     for (int i = 0; i < n; i++)
     {
-        std::cin >> number;
-        li.push_back(number);
+        std::cin >> li[i];
     }
-    for (auto it = li.begin(); it != li.end(); it++) {
-        
+
+    for (auto it = li.begin(); it != li.end(); it++)
+    {
+        auto jt = ++it;
+        it--;
+        int big = -1;
+        while (jt != li.end())
+        {
+            if (*jt > *it)
+            {
+                big = *jt;
+                break;
+            }
+            jt++;
+        }
+        std::cout << big << " ";
     }
+    std::cout << std::endl;
 }

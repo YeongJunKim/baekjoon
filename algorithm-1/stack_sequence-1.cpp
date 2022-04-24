@@ -33,9 +33,6 @@ int main(int argc, char *argv[])
     {
         st.push(i+1);
         vt.push_back('+');
-        
-
-        
     }
 
 
